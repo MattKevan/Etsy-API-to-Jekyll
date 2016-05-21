@@ -3,8 +3,9 @@ require 'json'
  
 apiKey = 'YOUR_API_KEY'
 shopID = 'YOUR_SHOP_ID'
+rateLimit = '100'
 
-listing_url = "https://openapi.etsy.com/v2/shops/#{shopID}/listings/active?method=GET&api_key=#{apiKey}&limit=100"
+listing_url = "https://openapi.etsy.com/v2/shops/#{shopID}/listings/active?method=GET&api_key=#{apiKey}&limit=#{rateLimit}"
 listing_uri = URI(listing_url)
 
 listing_response = Net::HTTP.get(listing_uri)
@@ -21,7 +22,7 @@ File.open('listings.yaml', 'w') do |file|
 		file.puts "  price: #{listing["price"]}"
 		file.puts "  tags: #{listing["tags"]}"
 
-		image_url = "https://openapi.etsy.com/v2/listings/#{listing["listing_id"]}/images?method=GET&api_key=#{apiKey}&limit=100"
+		image_url = "https://openapi.etsy.com/v2/listings/#{listing["listing_id"]}/images?method=GET&api_key=#{apiKey}&limit=#{rateLimit}"
 		image_uri = URI(image_url)
 
 		image_response = Net::HTTP.get(image_uri)
