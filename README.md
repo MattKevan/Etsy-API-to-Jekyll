@@ -22,9 +22,13 @@ Although the API call first returns all of the data associated with a listing, t
 
 Look at the listing API reference page https://www.etsy.com/developers/documentation/reference/listing#section_fields and pick your field. Then add a new line to the script, after line 23, like this:
 
+...ruby
 file.puts "  FIELD_TITLE: #{listing["FIELD"]}"
+...
 
 FIELD_TITLE is what you want to call the field in the YAML file. FIELD is the name of the Etsy field (they can have the same name). So, to print the description field, you'd write:
 
+...ruby
 file.puts "  description: #{listing["description"]}"
+...
 
