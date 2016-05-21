@@ -4,6 +4,7 @@ require 'json'
 apiKey = 'YOUR_API_KEY'
 shopID = 'YOUR_SHOP_ID'
 rateLimit = '100'
+stopChar = '|'
 
 listing_url = "https://openapi.etsy.com/v2/shops/#{shopID}/listings/active?method=GET&api_key=#{apiKey}&limit=#{rateLimit}"
 listing_uri = URI(listing_url)
@@ -14,8 +15,13 @@ listing_parsed = JSON.parse(listing_response)
 File.open('listings.yaml', 'w') do |file|
 	file.puts "---"
 	listing_info = listing_parsed["results"].each do |listing|
+
+		fullTitle = listing["title"]
+		shortTitle = fullTitle.split("#{stopChar}")[0]
+
 		file.puts "-"
-		file.puts "  title: #{listing["title"]}"
+		file.puts "  title: #{shortTitle}"
+		file.puts "  full-title: #{fullTitle}"
 		file.puts "  listing_id: #{listing["listing_id"]}"
 		file.puts "  url: #{listing["url"]}"
 		file.puts "  section_id: #{listing["shop_section_id"]}"
