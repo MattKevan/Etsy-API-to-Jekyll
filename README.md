@@ -1,6 +1,6 @@
 # Simple Etsy listings to YAML Ruby script
 
-This is a really simple Ruby script to get the details of all the listings in an Etsy store and save it as a YAML file. I'm sure there's a much better way to do this, but it works for me.
+This is a really simple Ruby script to get the details of all the listings in an Etsy store and save it as a YAML file. I'm sure there's a much better way to do this, but it works for me. 
 
 ## How to use
 
@@ -10,9 +10,11 @@ Go to https://www.etsy.com/developers/ and create a new app.
 
 In the script file, replace YOUR_API_KEY with your app's keystring, and YOUR_SHOP_ID with the id of the shop you want to get the listings for. The Etsy API is rate limited, so change the rateLimit value to the number of listings in the shop.
 
+Etsy listing titles tend to be more optimised for SEO than for humans, so I've added an option to trim the title at the first instance of a character. I separate the actual title from the keywords in my listings using a pipe symbol '|', but you can change it to whatever you need by editing the stopChar variable. Both the short title and the full title are still available for you to use.
+
 cd to the script file in Terminal and run it by typing 'ruby etsy-listings.rb'
 
-It'll think for a bit and then save a 'listings.yaml' file in the same folder.
+It'll think for a while, depending on how many listings there are, and then save a 'listings.yaml' file in the same folder.
 
 ## How it works
 
