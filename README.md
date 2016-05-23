@@ -10,7 +10,7 @@ Go to https://www.etsy.com/developers/ and create a new app.
 
 In the script file, replace YOUR_API_KEY with your app's keystring, and YOUR_SHOP_ID with the id of the shop you want to get the listings for. The Etsy API is rate limited, so change the rateLimit value to the number of listings in the shop.
 
-Etsy listing titles tend to be more optimised for SEO than for humans, so I've added an option to trim the title at the first instance of a character. I separate the actual title from the keywords in my listings using a pipe symbol '|', but you can change it to whatever you need by editing the stopChar variable. Both the short title and the full title are still available for you to use.
+Etsy listing titles tend to be more optimised for search than for humans, so I've added an option to trim the title at the first instance of a character. I separate the title from keywords in my listings by using a pipe symbol '|', but you can change it to whatever you want by editing the stopChar variable. Both the full title and the trimmed title are available for you to use later.
 
 cd to the script file in Terminal and run it by typing 'ruby etsy-listings.rb'
 
