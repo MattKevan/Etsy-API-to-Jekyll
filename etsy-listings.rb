@@ -34,9 +34,11 @@ File.open('listings.yaml', 'w') do |file|
 		image_response = Net::HTTP.get(image_uri)
 		image_parsed = JSON.parse(image_response)
 
+		count = 0
 		image_parsed["results"].each do |image|
-			file.puts "  image_570xN_url: #{image["url_570xN"]}"
-			file.puts "  image_fullxfull_url: #{image["url_fullxfull"]}"
+			file.puts "  image_570xN_url_#{count}: #{image["url_570xN"]}"
+			file.puts "  image_fullxfull_url_#{count}: #{image["url_fullxfull"]}"
+			count = count+1
 		end
 	end
 end
