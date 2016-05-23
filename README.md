@@ -20,7 +20,7 @@ It'll think for a while, depending on how many listings there are, and then save
 
 The script works in two stages. Firstly it gets all the data associated with a listing, then, as images are handled by Etsy separately, it looks up the image info for each. It's able to get all five images for each listing, and numbers them from 0 (the main listing image) to 4. 
 
-Although the API call first returns all of the data associated with a listing, the script doesn't print everything - I only needed a few fields. If you need a field which currently isn't there, it's straightforward to add. 
+Although the API call first returns all of the data associated with a listing as a JSON object, the script doesn't print everything - I only needed a few fields. If you need a field which currently isn't there, it's straightforward to add. 
 
 Look at the listing API reference page https://www.etsy.com/developers/documentation/reference/listing#section_fields and pick your field. Then add a new line to the script, after line 30, like this:
 
