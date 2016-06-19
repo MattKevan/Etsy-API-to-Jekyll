@@ -1,6 +1,6 @@
-# Simple Etsy listings to YAML Ruby script
+# Simple Etsy listings to Jekyll scripts
 
-This is a really simple Ruby script to get the details of all the listings in an Etsy store and save it as a YAML file. I'm sure there's a much better way to do this, but it works for me. 
+These are really simple Ruby scripts to get the details of all the listings in an Etsy store and save them in Jekyll-friendly formats. The first script saves the details to a YAML file, while the second saves the details to a custom collection.
 
 ## How to use
 
